@@ -1,0 +1,14 @@
+﻿<Application x:Class="NAIMS2.Operator.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:UI="clr-namespace:NAIMS2.Common.UI;assembly=NAIMS2.Common"
+             xmlns:Views="clr-namespace:NAIMS2.Common.Views;assembly=NAIMS2.Common"             
+             StartupUri="pack://application:,,,/NAIMS2.Common;component/Views/MainWindows.xaml"> <!-- DLL 참조로 변경 -->
+        <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/NAIMS2.Common;component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

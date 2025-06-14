@@ -1,0 +1,40 @@
+﻿<UI:Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:ViewModels="clr-namespace:NAIMS2.Operator.ViewModels"
+    xmlns:DataManager="clr-namespace:NAIMS2.DataManager.Views;assembly=NAIMS2.DataManager" 
+    xmlns:UI="clr-namespace:NAIMS2.Common.UI;assembly=NAIMS2.Common"     
+    x:Class="NAIMS2.Common.Views.MainWindow"
+    Title="NAIMS-II 운용자 프로그램" Height="600" Width="800" WindowState="Maximized">
+    <UI:Window.DataContext>
+        <ViewModels:MainViewModel/>
+    </UI:Window.DataContext>
+    <Grid>
+        <dx:DXTabControl x:Name="tabMain">
+            <dx:DXTabControl.ControlBoxRightTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <dx:SimpleButton BorderThickness="0" Margin="5,2,0,0" Width="16" Height="16" Click="Notice_Click"
+                                         Glyph="{dx:DXImage SvgImages/Business Objects/BO_Notifications.svg}"/>
+                        <dx:SimpleButton BorderThickness="0" Margin="5,2,0,0" Width="16" Height="16" Click="Message_Click" 
+                                         Glyph="{dx:DXImage SvgImages/Comments/NextComment.svg}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </dx:DXTabControl.ControlBoxRightTemplate>
+
+            <dx:DXTabItem Header="자료관리" Width="100">
+                <DataManager:MainControl x:Name="dataManager" LayoutKey="test" />
+            </dx:DXTabItem>
+            <dx:DXTabItem Header="자료분석" Width="100">
+                <Label Content="자료분석"/>
+            </dx:DXTabItem>
+            <dx:DXTabItem Header="시스템관리" Width="100">
+                <Label Content="시스템관리"/>
+            </dx:DXTabItem>
+            <dx:DXTabItem Header="시스템점검" Width="100">
+                <Label Content="시스템점검"/>
+            </dx:DXTabItem>
+        </dx:DXTabControl>
+    </Grid>
+</UI:Window>

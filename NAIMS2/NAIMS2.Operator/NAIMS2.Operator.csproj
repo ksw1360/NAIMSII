@@ -1,0 +1,97 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IncludePackageReferencesDuringMarkupCompilation>true</IncludePackageReferencesDuringMarkupCompilation>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <BaseOutputPath>C:\workspace\NAIMS2\NAIMS2.Operator\bin</BaseOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ico\**" />
+    <Compile Remove="Temp\**" />
+    <Compile Remove="Views\backup\**" />
+    <EmbeddedResource Remove="ico\**" />
+    <EmbeddedResource Remove="Temp\**" />
+    <EmbeddedResource Remove="Views\backup\**" />
+    <None Remove="ico\**" />
+    <None Remove="Temp\**" />
+    <None Remove="Views\backup\**" />
+    <Page Remove="ico\**" />
+    <Page Remove="Temp\**" />
+    <Page Remove="Views\backup\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\About.xaml.cs" />
+    <Compile Remove="Views\CollectList.xaml.cs" />
+    <Compile Remove="Views\DeviceFileList.xaml.cs" />
+    <Compile Remove="Views\MainInherited.xaml.cs" />
+    <Compile Remove="Views\MainWindow.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="20250530 MainWindows.xaml xaml 소스 백업.txt" />
+    <None Remove="20250530 화면 Common Views로 옮긴후 MainViewModel 소스 백업.txt" />
+    <None Remove="Resources\Arrow_Down.png" />
+    <None Remove="Resources\Arrow_Up.png" />
+    <None Remove="Resources\리스트.ico" />
+    <None Remove="Resources\알림.ico" />
+    <None Remove="Views.zip" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Views\About.xaml" />
+    <Page Remove="Views\CollectList.xaml" />
+    <Page Remove="Views\DeviceFileList.xaml" />
+    <Page Remove="Views\MainInherited.xaml" />
+    <Page Remove="Views\MainWindow.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Arrow_Down.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Arrow_Up.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\리스트.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\알림.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Images" Version="24.2.3" />
+    <PackageReference Include="DevExpress.Wpf.Core" Version="24.2.3" />
+    <PackageReference Include="devexpress.wpf.docking" Version="24.2.3" />
+    <PackageReference Include="DevExpress.Wpf.ThemesLW" Version="24.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NAIMS2.Common\NAIMS2.Common.csproj" />
+    <ProjectReference Include="..\NAIMS2.DataManager\NAIMS2.DataManager.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="help.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

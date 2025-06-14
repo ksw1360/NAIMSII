@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IncludePackageReferencesDuringMarkupCompilation>true</IncludePackageReferencesDuringMarkupCompilation>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Images" Version="24.2.3" />
+    <PackageReference Include="DevExpress.Wpf.Core" Version="24.2.3" />
+    <PackageReference Include="DevExpress.Wpf.ThemesLW" Version="24.2.3" />
+    <PackageReference Include="DevExpress.Mvvm.CodeGenerators" Version="22.1.*-*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NAIMS2.Common\NAIMS2.Common.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <BaseOutputPath>C:\workspace\NAIMS2\NAIMS2.Operator\bin</BaseOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="UI\MainInherited.xaml.cs" />
+    <Compile Remove="UI\MainWindow.xaml.cs" />
+    <Compile Remove="UI\TabMenu.xaml.cs" />
+    <Compile Remove="Views\MainInherited.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="UI\MainInherited.xaml" />
+    <Page Remove="UI\MainWindow.xaml" />
+    <Page Remove="UI\TabMenu.xaml" />
+    <Page Remove="Views\MainInherited.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Converters\" />
+    <Folder Include="Chat\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Wpf.Core" Version="24.2.3" />
+    <PackageReference Include="devexpress.wpf.docking" Version="24.2.3" />
+    <PackageReference Include="devexpress.wpf.grid.core" Version="24.2.3" />
+    <PackageReference Include="log4net" Version="3.1.0" />
+    <PackageReference Include="Npgsql" Version="9.0.3" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.119" />
+    <PackageReference Include="System.Management" Version="9.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="NAIMS2.Operator">
+      <HintPath>..\NAIMS2.Operator\bin\Debug\net8.0-windows\NAIMS2.Operator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Update="UI\Page.cs" />
+    <Compile Update="Views\CollectList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DeviceFileList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Utils\log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="NAIMS2.db.origin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,144 @@
+﻿<UserControl x:Class="NAIMS2.Common.Views.SideBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NAIMS2.Common.Views"
+             mc:Ignorable="d" 
+             Background="#FF3C3C3C"
+             d:DesignHeight="1000" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- ISUS90_250101_250104_대잠훈련 with Icon -->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lb_exercise" 
+                   Content="ISUS90_250101_250104_대잠훈련" 
+                   Background="#FF3C3C3C" 
+                   Foreground="White" 
+                   FontFamily="Pretendard"
+                   FontSize="14"
+                   HorizontalContentAlignment="Center" 
+                   VerticalContentAlignment="Center"
+                   Grid.Column="0"/>
+            <Button Content="🔍" 
+                    Background="#FF3C3C3C" 
+                    Foreground="White" 
+                    Width="30" 
+                    Height="30" 
+                    Margin="5"
+                    Grid.Column="1"/>
+        </Grid>
+
+        <!-- 임무 상세정보 -->
+        <Label Content="임무 상세정보" 
+               Foreground="White" 
+               Background="#FF3C3C3C" 
+               FontFamily="Pretendard"
+               FontSize="14"
+               HorizontalContentAlignment="Center"
+               Grid.Row="1"/>
+
+        <!-- 왼쪽 오른쪽 Label 4개씩 -->
+        <Grid Grid.Row="3" Background="#FF3C3C3C">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Background="#FF3C3C3C">
+                <Label Content="Label : Text" Foreground="White" FontFamily="Pretendard" FontSize="14" Width="150" HorizontalAlignment="Left"/>
+                <Label Content="Label : Text" Foreground="White" FontFamily="Pretendard" FontSize="14" Width="150" HorizontalAlignment="Left"/>
+                <Label Content="Label : Text" Foreground="White" FontFamily="Pretendard" FontSize="14" Width="150" HorizontalAlignment="Left"/>
+                <Label Content="Label : Text" Foreground="White" FontFamily="Pretendard" FontSize="14" Width="150" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Background="#FF3C3C3C">
+                <Label Content="Label : Text" Foreground="White" FontFamily="Pretendard" FontSize="14" Width="150" HorizontalAlignment="Right"/>
+                <Label Content="Label : Text" Foreground="White" FontFamily="Pretendard" FontSize="14" Width="150" HorizontalAlignment="Right"/>
+                <Label Content="Label : Text" Foreground="White" FontFamily="Pretendard" FontSize="14" Width="150" HorizontalAlignment="Right"/>
+                <Label Content="Label : Text" Foreground="White" FontFamily="Pretendard" FontSize="14" Width="150" HorizontalAlignment="Right"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Sub Title -->
+        <Label Content="Sub Title" 
+               Foreground="White" 
+               Background="#FF3C3C3C" 
+               FontFamily="Pretendard"
+               FontSize="14"
+               HorizontalContentAlignment="Center"
+               Grid.Row="5"/>
+
+        <!-- 전술적 설명 -->
+        <Label Content="전술적 설명" 
+               Foreground="White" 
+               Background="#FF3C3C3C" 
+               FontFamily="Pretendard"
+               FontSize="14"
+               HorizontalContentAlignment="Center"
+               Grid.Row="6"/>
+
+        <!-- ISUS90_0000 훈련(250101-250104) 중 수집... -->
+        <Label Content="ISUS90_0000 훈련(250101-250104) 중 수집&#x0a;
+훈련 6일 모두 0000활 초음으로 추정" 
+               Foreground="White" 
+               Background="#FF3C3C3C" 
+               FontFamily="Pretendard"
+               FontSize="14"
+               Grid.Row="7"/>
+
+        <!-- 설명 with Icon -->
+        <Grid Grid.Row="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="설명" 
+                   Foreground="White" 
+                   Background="#FF3C3C3C" 
+                   FontFamily="Pretendard"
+                   FontSize="14"
+                   HorizontalContentAlignment="Center"
+                   Grid.Column="0"/>
+            <Button Content="🔍" 
+                    Background="#FF3C3C3C" 
+                    Foreground="White" 
+                    Width="30" 
+                    Height="30" 
+                    Margin="5"
+                    Grid.Column="1"/>
+        </Grid>
+
+        <!-- 운용자 작성 설명 -->
+        <Label Content="운용자 작성 설명" 
+               Foreground="White" 
+               Background="#FF3C3C3C" 
+               FontFamily="Pretendard"
+               FontSize="14"
+               HorizontalContentAlignment="Center"
+               Grid.Row="9"/>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="11" Orientation="Vertical" VerticalAlignment="Bottom" Background="#FF3C3C3C">
+            <Button Content="임시삭제" Background="#393939" Foreground="White" Height="30" Margin="5" Click="Button_Click"/>
+            <Button Content="보조정보 작성" Background="#393939" Foreground="White" Height="30" Margin="5"/>
+            <Button Content="전송" Background="#393939" Foreground="White" Height="30" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

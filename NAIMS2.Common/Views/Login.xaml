@@ -1,0 +1,52 @@
+﻿<Window x:Class="NAIMS2.Common.Views.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:NAIMS2.Common.Views"
+        xmlns:common="clr-namespace:NAIMS2.Common"
+        Title="NAIMS-II 해군음향관리체계"
+        mc:Ignorable="d" Width="850" Background="#383838" Height="630">
+    <Grid>
+        <!-- StackPanel: Canvas 크기 조정 -->
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" 
+                    Background="#979797" Height="325" Width="321" Margin="20,104,0,0">
+            <Canvas Width="321" Height="325">
+                <!-- 첫 번째 사선: 왼쪽 상단(0,0) → 오른쪽 하단(321,325) -->
+                <Line X1="0" Y1="0" X2="321" Y2="325" Stroke="Gray" StrokeThickness="2"/>
+                <!-- 두 번째 사선: 오른쪽 상단(321,0) → 왼쪽 하단(0,325) -->
+                <Line X1="321" Y1="0" X2="0" Y2="325" Stroke="Gray" StrokeThickness="2"/>
+            </Canvas>
+        </StackPanel>
+        <!-- TextBox (ID): 그대로 유지 -->
+        <TextBox x:Name="tb_id" Text="사용자 ID를 입력하세요"
+                 Background="White" Foreground="Black" 
+                 HorizontalAlignment="Left" VerticalAlignment="Top" 
+                 Width="400" Height="50" Margin="357,145,0,0" 
+                 FontFamily="Pretendard" FontSize="20" 
+                 TextAlignment="Left" MouseDown="tb_id_MouseDown"
+                 GotFocus="IdTextBox_GotFocus" VerticalContentAlignment="Center"
+                 LostFocus="IdTextBox_LostFocus"/>
+        <!-- TextBox (PW): 그대로 유지 -->
+        <TextBox x:Name="tb_pw" Text="사용자 PW를 입력하세요"
+                 Background="White" Foreground="Black" 
+                 HorizontalAlignment="Left" VerticalAlignment="Top" 
+                 Width="400" Height="50" Margin="357,230,0,0" 
+                 FontFamily="Pretendard" FontSize="20" 
+                 TextAlignment="Left" VerticalContentAlignment="Center"
+                 GotFocus="pwTextBox_GotFocus" 
+                 LostFocus="pwTextBox_LostFocus"/>
+        <!-- CheckBox: 그대로 유지 -->
+        <CheckBox Content="교육모드로 시작" Background="Transparent" Foreground="White" Margin="357,303,99,251"
+                  FontFamily="Pretendard" FontSize="20"/>
+        <!-- Button: 그대로 유지 -->
+        <Button x:Name="btn_login" Content="로그인" Background="Black" Foreground="White" HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center" FontFamily="Pretendard" FontSize="20" Margin="357,348,93,204"
+                Click="btn_login_Click"/>
+        <!-- TextBlock (ID 레이블): 그대로 유지 -->
+        <TextBlock Text="ID" Foreground="Gray" FontFamily="Pretendard" FontSize="20" Margin="358,115,462,474"/>
+        <!-- Label (PW 레이블): 그대로 유지 -->
+        <Label Content="PW" Background="Transparent" Foreground="Gray" FontFamily="Pretendard" FontSize="20"
+               HorizontalAlignment="Left" VerticalAlignment="Top" Margin="358,200,0,0"/>
+    </Grid>
+</Window>

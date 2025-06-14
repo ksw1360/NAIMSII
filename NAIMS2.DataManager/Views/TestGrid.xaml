@@ -1,0 +1,35 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NAIMS2.DataManager.Views"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             x:Class="NAIMS2.DataManager.Views.TestGrid"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <dxg:GridControl AutoGenerateColumns="None" ItemsSource="{Binding DataTestGrid}">
+            <dxg:GridControl.View>
+                <dxg:TableView AutoWidth="True" ShowFixedTotalSummary="False" AllowEditing="False" ShowSearchPanelMode="Never" AllowGrouping="False" ShowGroupPanel="False"  ShowIndicator="True" Header="{x:Null}"/>
+            </dxg:GridControl.View>
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn Header="자료파일명" Binding="{Binding filename}"/>
+                <dxg:GridColumn Header="자료유형" Binding="{Binding filetype}"/>
+                <dxg:GridColumn Header="수신자" Binding="{Binding recvname}"/>
+                <dxg:GridColumn Header="파일크기" Binding="{Binding size}"/>
+                <dxg:GridColumn Header="전송율" Binding="{Binding percent}">
+                    <dxg:GridColumn.CellTemplate>
+                        <DataTemplate>
+                            <dxe:ProgressBarEdit x:Name="PART_Editor" Height="30" CornerRadius="2"
+                                                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                                    ContentDisplayMode="Value" DisplayFormatString="{}{0}%">
+                            </dxe:ProgressBarEdit>
+                        </DataTemplate>
+                    </dxg:GridColumn.CellTemplate>
+                </dxg:GridColumn>
+            </dxg:GridControl.Columns>
+        </dxg:GridControl>
+    </Grid>
+</UserControl>

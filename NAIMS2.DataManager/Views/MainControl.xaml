@@ -1,0 +1,36 @@
+<UI:UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NAIMS2.DataManager.Views"
+             xmlns:ViewModels="clr-namespace:NAIMS2.DataManager.ViewModels"
+             xmlns:UI="clr-namespace:NAIMS2.Common.UI;assembly=NAIMS2.Common" xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking" x:Class="NAIMS2.DataManager.Views.MainControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UI:UserControl.DataContext>
+        <ViewModels:MainVIewModel/>
+    </UI:UserControl.DataContext>
+    <Grid>
+        <UI:DockManager Name="dockManager" LayoutFileName="DataManagerLayout.xml">
+            <dxdo:LayoutGroup Name="root" Orientation="Horizontal">
+                <dxdo:LayoutGroup Name="group1" Orientation="Vertical" ItemWidth="300">
+                    <dxdo:LayoutPanel Name="men1" Caption="테스트1">
+                        <local:Test />
+                    </dxdo:LayoutPanel>
+                    <dxdo:LayoutPanel Name="menu2" Caption="테스트2">
+                    </dxdo:LayoutPanel>
+                    <dxdo:LayoutPanel Name="menu3" Caption="테스트3">
+                    </dxdo:LayoutPanel>
+                </dxdo:LayoutGroup>
+                <dxdo:LayoutGroup Name="group2" Orientation="Vertical">
+                    <dxdo:LayoutPanel Name="grid1" Caption="자료목록">
+                        <local:TestGrid />
+                    </dxdo:LayoutPanel>
+                    <dxdo:LayoutPanel Name="grid2" Caption="테스트">
+                    </dxdo:LayoutPanel>
+                </dxdo:LayoutGroup>
+            </dxdo:LayoutGroup>
+        </UI:DockManager>
+    </Grid>
+</UI:UserControl>

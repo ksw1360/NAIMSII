@@ -1,0 +1,210 @@
+﻿<UserControl x:Class="NAIMS2.Common.Views.MissionMngDashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NAIMS2.Common.Views" xmlns:models="clr-namespace:NAIMS2.Common.Models;assembly=NAIMS2.Operator" d:DataContext="{d:DesignInstance Type=models:PersonMissionData}"
+             mc:Ignorable="d" d:DesignWidth="1366"
+             Background="#1E1E1E" Height="841" Loaded="UserControl_Loaded">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="324">
+            <Grid Height="19" Width="193">
+                <TextBlock Text="임무관리 대시보드" Foreground="#BBBBBB" FontSize="14" FontWeight="SemiBold" Margin="1,-10,9,10"/>
+            </Grid>
+            <StackPanel Orientation="Horizontal">
+                <!-- Placeholder for additional content -->
+            </StackPanel>
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" MinWidth="438"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Margin="0,0,20,0">
+                <Border Background="#2D2D30" CornerRadius="5" Padding="15" Margin="0,0,0,20" Height="396">
+                    <StackPanel x:Name="LeftPanel" Height="377" VerticalAlignment="Top" HorizontalAlignment="Center">
+                        <TextBlock Text="진행중 임무현황" Foreground="White" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,15" Width="141"
+               HorizontalAlignment="Left"/>
+                        <TextBlock x:Name="tb_time" Text="2025-06-11" Foreground="White" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,15" Width="141"
+               HorizontalAlignment="Left"/>
+                        <Grid Width="404" Height="283">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" Foreground="#BBBBBB" FontSize="14" HorizontalAlignment="Left" Margin="142,0,0,260" Width="104" Grid.ColumnSpan="2"><Run Language="ko-kr" Text="  "/><Run Text="미할당 자료"/></TextBlock>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Foreground="#BBBBBB" FontSize="14" HorizontalAlignment="Left" Margin="68,0,0,260" Width="114"><Run Text="  "/><Run Language="ko-kr" Text="  "/><Run Text="분석 중 자료"/></TextBlock>
+
+                            <Border Grid.Column="0" Background="#3E3E42" CornerRadius="5" Padding="20" Margin="129,30,148,151" Grid.ColumnSpan="2">
+                                <TextBlock Text="2" Foreground="#007ACC" FontSize="48" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <Border Background="#3E3E42" CornerRadius="5" Padding="20" Margin="68,30,7,151" Grid.Column="1">
+                                <TextBlock Text="16" Foreground="#007ACC" FontSize="48" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <TextBlock Grid.Column="0" Foreground="#BBBBBB" FontSize="14" FontWeight="SemiBold" Margin="26,32,84,143">
+                                    <Run/><LineBreak/><Run/><LineBreak/>
+                                    <Run Language="ko-kr" Text="    "/><Run Text="원음분석"/>
+                            </TextBlock>
+                            <Border Background="#3E3E42" CornerRadius="5" Padding="15" Width="124" HorizontalAlignment="Right" Margin="0,154,148,27" RenderTransformOrigin="0.612,0.482" Grid.ColumnSpan="2">
+                                <TextBlock Text="0" Foreground="#007ACC" FontSize="48" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Foreground="#BBBBBB" FontSize="14" FontWeight="SemiBold" Margin="50,155,72,46" Grid.ColumnSpan="2"><Run/><LineBreak/><LineBreak/><Run Text="정밀분석"/></TextBlock>
+                                <Border Grid.Column="1" Background="#3E3E42" CornerRadius="5" Padding="15" Width="130" HorizontalAlignment="Right" Margin="0,154,-198,24">
+                                    <TextBlock Text="25" Foreground="#007ACC" FontSize="48" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+                <Border Background="#2D2D30" CornerRadius="5" Padding="15" Height="375">
+                    <StackPanel>
+                        <TextBlock Text="최근 완료 임무 내역" Foreground="White" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,10"/>
+                        <TextBlock Text="2024-11-01 ~ 2024-11-07" Foreground="#BBBBBB" FontSize="12" Margin="0,0,0,10"/>
+
+                        <StackPanel>
+                            <Border Background="#3E3E42" CornerRadius="3" Padding="10" Margin="0,0,0,5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0">
+                                        <TextBlock Text="WSD20K_240222_240301_01_000.nb" Foreground="White" FontWeight="SemiBold"/>
+                                        <TextBlock Text="RICO 소령 | 정밀분석 임무완료" Foreground="#BBBBBB" FontSize="12"/>
+                                    </StackPanel>
+                                    <TextBlock Grid.Column="1" Text="2024-11-05" Foreground="#BBBBBB" VerticalAlignment="Center"/>
+                                </Grid>
+                            </Border>
+                            <Border Background="#3E3E42" CornerRadius="3" Padding="10" Margin="0,0,0,5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0">
+                                        <TextBlock Text="Signal_000_001.확장자명" Foreground="White" FontWeight="SemiBold"/>
+                                        <TextBlock Text="RICO 소령 | 정밀분석 임무완료" Foreground="#BBBBBB" FontSize="12"/>
+                                    </StackPanel>
+                                    <TextBlock Grid.Column="1" Text="2024-11-05" Foreground="#BBBBBB" VerticalAlignment="Center"/>
+                                </Grid>
+                            </Border>
+                            <Border Background="#3E3E42" CornerRadius="3" Padding="10" Margin="0,0,0,5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0">
+                                        <TextBlock Text="WSD20K_240222_240301_01_000.nb" Foreground="White" FontWeight="SemiBold"/>
+                                        <TextBlock Text="RICO 소령 | 정밀분석 임무완료" Foreground="#BBBBBB" FontSize="12"/>
+                                    </StackPanel>
+                                    <TextBlock Grid.Column="1" Text="2024-11-04" Foreground="#BBBBBB" VerticalAlignment="Center"/>
+                                </Grid>
+                            </Border>
+                            <Border Background="#3E3E42" CornerRadius="3" Padding="10" Margin="0,0,0,5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0">
+                                        <TextBlock Text="Signal_000_003.확장자명" Foreground="White" FontWeight="SemiBold"/>
+                                        <TextBlock Text="RICO 소령 | 완료분석 임무완료" Foreground="#BBBBBB" FontSize="12"/>
+                                    </StackPanel>
+                                    <TextBlock Grid.Column="1" Text="2024-11-01" Foreground="#BBBBBB" VerticalAlignment="Center"/>
+                                </Grid>
+                            </Border>
+                            <Border Background="#3E3E42" CornerRadius="3" Padding="10">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0">
+                                        <TextBlock Text="Signal_000_002.확장자명" Foreground="White" FontWeight="SemiBold"/>
+                                        <TextBlock Text="RICO 소령 | 완료분석 임무완료" Foreground="#BBBBBB" FontSize="12"/>
+                                    </StackPanel>
+                                    <TextBlock Grid.Column="1" Text="2024-11-01" Foreground="#BBBBBB" VerticalAlignment="Center"/>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <Border Grid.Column="1" Background="#2D2D30" CornerRadius="5" Padding="15">
+                <StackPanel>
+                    <TextBlock Text="담당자별 임무현황" Foreground="White" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,15"/>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,10">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,15,0">
+                            <Rectangle Width="10" Height="10" Fill="#C0BFFF" Margin="0,0,5,0"/>
+                            <TextBlock Text="원음분석 전" Foreground="White" FontSize="12"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,15,0">
+                            <Rectangle Width="10" Height="10" Fill="#5F13FF" Margin="0,0,5,0"/>
+                            <TextBlock Text="원음분석 중" Foreground="White" FontSize="12"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,15,0">
+                            <Rectangle Width="10" Height="10" Fill="#CFEDFF" Margin="0,0,5,0"/>
+                            <TextBlock Text="정밀분석 전" Foreground="White" FontSize="12"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Width="10" Height="10" Fill="#1371FF" Margin="0,0,5,0"/>
+                            <TextBlock Text="정밀분석 중" Foreground="White" FontSize="12"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <ItemsControl ItemsSource="{Binding PersonData}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0,5,0,5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="{Binding Name}" Foreground="White" Width="80" TextAlignment="Right" Margin="0,0,10,0"/>
+
+                                    <Grid Grid.Column="1" Height="20" Background="#3E3E42" ClipToBounds="True">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="{Binding PreCompletionWidth, Mode=OneWay}"/>
+                                            <ColumnDefinition Width="{Binding InCompletionWidth, Mode=OneWay}"/>
+                                            <ColumnDefinition Width="{Binding PreDetailedWidth, Mode=OneWay}"/>
+                                            <ColumnDefinition Width="{Binding InDetailedWidth, Mode=OneWay}"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Rectangle Grid.Column="0" Fill="#C0BFFF"/>
+                                        <Rectangle Grid.Column="1" Fill="#5F13FF"/>
+                                        <Rectangle Grid.Column="2" Fill="#CFEDFF"/>
+                                        <Rectangle Grid.Column="3" Fill="#1371FF"/>
+                                    </Grid>
+                                    <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="10,0,0,0">
+                                        <TextBlock Text="{Binding TotalCount}" Foreground="#BBBBBB" Margin="5,0,0,0"/>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>
