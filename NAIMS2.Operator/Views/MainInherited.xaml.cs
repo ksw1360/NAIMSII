@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using DevExpress.Xpf.Core.Native;
 using NAIMS2.Common.Utils;
+using MessageBox = System.Windows.MessageBox;
 
 namespace NAIMS2.Common.Views
 {
@@ -134,13 +135,13 @@ namespace NAIMS2.Common.Views
             }
         }
 
-        private TabItem CreateTabItem(string name, string header, Brush background = null)
+        private TabItem CreateTabItem(string name, string header, System.Drawing.Brush background = null)
         {
             return new TabItem
             {
                 Name = name,
                 Header = header,
-                Background = background ?? new SolidColorBrush(Color.FromArgb(60, 60, 60, 60))
+                Background = background ?? new SolidColorBrush(System.Drawing.Color.FromArgb(60, 60, 60, 60))
             };
         }
 
@@ -169,7 +170,7 @@ namespace NAIMS2.Common.Views
             //About about = new About();
             //about.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             //about.ShowDialog();
-            Application.Current.Shutdown();
+            System.Windows.Application.Current.Shutdown();
         }
 
 

@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
-    <BaseOutputPath>F:\WorkSpace\NAIMS2\NAIMS2.Operator\bin</BaseOutputPath>
+    <BaseOutputPath>C:\workspace\NAIMS2\NAIMS2.Operator\bin</BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="devexpress.wpf.grid.core" Version="24.2.7" />
+    <PackageReference Include="devexpress.wpf.grid.core" Version="25.1.7" />
   </ItemGroup>
 
   <ItemGroup>

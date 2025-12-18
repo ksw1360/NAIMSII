@@ -3,14 +3,13 @@
                     xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
                     xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
                     xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
-                    xmlns:Common="clr-namespace:NAIMS2.Common"
-                    xmlns:UI="clr-namespace:NAIMS2.Common.UI">
+                    xmlns:ui="clr-namespace:NAIMS2.Operator.UI;assembly=NAIMS2.Operator">
     <Style TargetType="{x:Type Button}" >
         <Setter Property="Background" Value="#505050" />
         <Setter Property="Foreground" Value="White" />
         <Setter Property="Margin" Value="5" />
     </Style>
-    <Style TargetType="{x:Type UI:DockManager}">
+    <Style TargetType="{x:Type ui:DockManager}">
         <Setter Property="AllowCustomization" Value="False" />
     </Style>
     <Style TargetType="{x:Type dxdo:LayoutGroup}">

@@ -1,5 +1,9 @@
-﻿using System;
+﻿using log4net.Repository.Hierarchy;
+using NAIMS2.Common.Utils;
+using Npgsql;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,11 +16,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using log4net.Repository.Hierarchy;
-using NAIMS2.Common.Utils;
+using Color = System.Windows.Media.Color;
 using Logger = NAIMS2.Common.Utils.Logger;
+using UserControl = System.Windows.Controls.UserControl;
 
-namespace NAIMS2.Operator.Views
+namespace NAIMS2.Common.Views
 {
     /// <summary>
     /// CollectList.xaml에 대한 상호 작용 논리
@@ -49,7 +53,7 @@ namespace NAIMS2.Operator.Views
             }
             catch (Exception ex)
             {
-                Logger.Error(ex.Message);
+                Logger.Error("Error", ex);
             }
         }
 
@@ -67,7 +71,8 @@ namespace NAIMS2.Operator.Views
                     Setters =
                     {
                         new Setter(DataGridCell.BackgroundProperty, new SolidColorBrush(Color.FromArgb(51,51,51,51))),
-                        new Setter(DataGridCell.ForegroundProperty, new SolidColorBrush(Color.FromArgb(255, 255, 255, 255)))
+                        new Setter(DataGridCell.ForegroundProperty, new SolidColorBrush(Color.FromArgb(255, 255, 255, 255))),
+                        new Setter(DataGridCell.HorizontalContentAlignmentProperty, true),
                     }
                 };
             }
@@ -88,7 +93,7 @@ namespace NAIMS2.Operator.Views
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             // 검색 로직 (예: 키워드와 날짜를 사용해 데이터 필터링)
-            MessageBox.Show("검색 버튼 클릭됨!");
+            System.Windows.MessageBox.Show("검색 버튼 클릭됨!");
         }
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)

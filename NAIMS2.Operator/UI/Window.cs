@@ -7,23 +7,9 @@ using System.Threading.Tasks;
 using DevExpress.Xpf.Core;
 //using NAIMS2.Common.Interfaces;
 
-/*
-namespace NAIMS2.Common
+namespace NAIMS2.Operator.UI
 {
-    public partial class Window : ThemedWindow
-    {
-        public Hashtable? BaseInfo { get; set; }
-        public virtual void Init(Hashtable info)
-        {
-            this.BaseInfo = info;
-        }
-    }
-}
-*/
-
-namespace NAIMS2.Common
-{
-    public partial class IUIBase
+    public class Window : ThemedWindow
     {
         public Hashtable? BaseInfo { get; set; }
         public virtual void Init(Hashtable info)

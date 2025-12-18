@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DevExpress.Xpf.Core;
 
-namespace NAIMS2.Operator.Views
+namespace NAIMS2.Common.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,6 +24,11 @@ namespace NAIMS2.Operator.Views
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
         }
 
         public override void Init(Hashtable info)

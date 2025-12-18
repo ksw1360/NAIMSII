@@ -2,7 +2,7 @@
 using System.IO;
 using System.Windows;
 
-namespace NAIMS2.Operator.Views
+namespace NAIMS2.Common.Views
 {
     /// <summary>
     /// About.xaml에 대한 상호 작용 논리

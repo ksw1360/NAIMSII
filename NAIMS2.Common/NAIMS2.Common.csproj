@@ -5,39 +5,41 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
-    <BaseOutputPath>F:\WorkSpace\NAIMS2\NAIMS2.Operator\bin</BaseOutputPath>
+    <BaseOutputPath>C:\workspace\NAIMS2\NAIMS2.Operator\bin</BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="UI\MainInherited.xaml.cs" />
-    <Compile Remove="UI\MainWindow.xaml.cs" />
-    <Compile Remove="UI\TabMenu.xaml.cs" />
-    <Compile Remove="Views\MainInherited.xaml.cs" />
-    <Compile Remove="Views\MainWindow.xaml.cs" />
+    <Compile Remove="Chat\**" />
+    <Compile Remove="Converters\**" />
+    <Compile Remove="Views\**" />
+    <EmbeddedResource Remove="Chat\**" />
+    <EmbeddedResource Remove="Converters\**" />
+    <EmbeddedResource Remove="Views\**" />
+    <None Remove="Chat\**" />
+    <None Remove="Converters\**" />
+    <None Remove="Views\**" />
+    <Page Remove="Chat\**" />
+    <Page Remove="Converters\**" />
+    <Page Remove="Views\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Page Remove="UI\MainInherited.xaml" />
-    <Page Remove="UI\MainWindow.xaml" />
-    <Page Remove="UI\TabMenu.xaml" />
-    <Page Remove="Views\MainInherited.xaml" />
-    <Page Remove="Views\MainWindow.xaml" />
+    <Compile Remove="ViewModels\DashboardContentViewModel.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Converters\" />
-    <Folder Include="Chat\" />
+    <Page Remove="ViewModels\DashboardContentViewModel.xaml" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DevExpress.Wpf.Core" Version="24.2.7" />
-    <PackageReference Include="devexpress.wpf.docking" Version="24.2.7" />
-    <PackageReference Include="devexpress.wpf.grid.core" Version="24.2.7" />
-    <PackageReference Include="log4net" Version="3.1.0" />
-    <PackageReference Include="Npgsql" Version="9.0.3" />
+    <PackageReference Include="DevExpress.Wpf.Core" Version="25.1.7" />
+    <PackageReference Include="devexpress.wpf.docking" Version="25.1.7" />
+    <PackageReference Include="devexpress.wpf.grid.core" Version="25.1.7" />
+    <PackageReference Include="log4net" Version="3.2.0" />
+    <PackageReference Include="Npgsql" Version="10.0.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
-    <PackageReference Include="System.Data.SQLite" Version="1.0.119" />
-    <PackageReference Include="System.Management" Version="9.0.5" />
+    <PackageReference Include="System.Data.SQLite" Version="2.0.2" />
+    <PackageReference Include="System.Management" Version="10.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -51,13 +53,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Update="UI\Page.cs" />
-    <Compile Update="Views\CollectList.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\DeviceFileList.xaml.cs">
-      <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
 
