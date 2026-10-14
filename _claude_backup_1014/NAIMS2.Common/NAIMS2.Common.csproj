@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<BaseOutputPath>C:\workspace\NAIMS2\NAIMS2.Operator\bin</BaseOutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Chat\**" />
+		<Compile Remove="Converters\**" />
+		<Compile Remove="Views\**" />
+		<EmbeddedResource Remove="Chat\**" />
+		<EmbeddedResource Remove="Converters\**" />
+		<EmbeddedResource Remove="Views\**" />
+		<None Remove="Chat\**" />
+		<None Remove="Converters\**" />
+		<None Remove="Views\**" />
+		<Page Remove="Chat\**" />
+		<Page Remove="Converters\**" />
+		<Page Remove="Views\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="ViewModels\DashboardContentViewModel.xaml.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Page Remove="ViewModels\DashboardContentViewModel.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="DevExpress.Wpf.Core" Version="26.1.5" />
+		<PackageReference Include="devexpress.wpf.docking" Version="26.1.5" />
+		<PackageReference Include="devexpress.wpf.grid.core" Version="26.1.5" />
+		<PackageReference Include="Npgsql" Version="10.0.3" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.9.1" />
+		<PackageReference Include="System.Data.SQLite" Version="2.0.4" />
+		<PackageReference Include="System.Management" Version="10.0.13" />
+		<PackageReference Include="System.Security.Cryptography.Xml" Version="10.0.13" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="NAIMS2.Operator">
+			<HintPath>..\NAIMS2.Operator\bin\Debug\net8.0-windows\NAIMS2.Operator.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Properties\Settings.Designer.cs">
+			<DesignTimeSharedInput>True</DesignTimeSharedInput>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Settings.settings</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Utils\log4net.config">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<Link>log4net.config</Link>
+		</None>
+		<None Update="NAIMS2.db.origin">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Properties\Settings.settings">
+			<Generator>PublicSettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+
+</Project>

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:NAIMS2.Common.Views" xmlns:models="clr-namespace:NAIMS2.Common.Models;assembly=NAIMS2.Operator" d:DataContext="{d:DesignInstance Type=models:PersonMissionData}"
+             xmlns:local="clr-namespace:NAIMS2.Common.Views" xmlns:models="clr-namespace:NAIMS2.Common.Models;assembly=NAIMS2.Common" d:DataContext="{d:DesignInstance Type=models:PersonMissionData}"
              mc:Ignorable="d" d:DesignWidth="1366"
              Background="#1E1E1E" Height="841" Loaded="UserControl_Loaded">
     <Grid Margin="20">

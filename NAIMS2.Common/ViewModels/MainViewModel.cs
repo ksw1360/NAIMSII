@@ -184,6 +184,13 @@ namespace NAIMS2.Common.ViewModels
             UpdateBodyTabs(0);
         }
 
+        private static FrameworkElement CreateView(string name)
+        {
+            var type = Type.GetType($"NAIMS2.Common.Views.{name}, NAIMS2.Operator")
+                       ?? throw new InvalidOperationException($"화면을 찾을 수 없습니다: {name}");
+            return (FrameworkElement)Activator.CreateInstance(type)!;
+        }
+
         private void UpdateBodyTabs(int topTabIndex)
         {
             BodyTabItems.Clear();
@@ -197,15 +204,11 @@ namespace NAIMS2.Common.ViewModels
                     grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(5, GridUnitType.Pixel) });
                     grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(300) });
 
-                    // 새로운 SideBar 인스턴스 생성
-                    var sideBar = new SideBar
-                    {
-                        Width = double.NaN,
-                        Height = double.NaN,
-                        HorizontalAlignment = System.Windows.HorizontalAlignment.Right,
-                        VerticalAlignment = VerticalAlignment.Stretch,
-                        Margin = new Thickness(5)
-                    };
+                    // 실제 화면(UserControl)은 NAIMS2.Operator 어셈블리에 있으므로 이름으로 생성
+                    var sideBar = CreateView("SideBar");
+                    sideBar.HorizontalAlignment = System.Windows.HorizontalAlignment.Right;
+                    sideBar.VerticalAlignment = VerticalAlignment.Stretch;
+                    sideBar.Margin = new Thickness(5);
                     Grid.SetColumn(sideBar, 2);
                     grid.Children.Add(sideBar);
 
@@ -220,16 +223,10 @@ namespace NAIMS2.Common.ViewModels
                     Grid.SetColumn(gridSplitter, 1);
                     grid.Children.Add(gridSplitter);
 
-                    // 새로운 CollectList 인스턴스 생성
-                    var collectList = new CollectList
-                    {
-                        Width = double.NaN,
-                        Height = double.NaN,
-                        HorizontalAlignment = System.Windows.HorizontalAlignment.Left,
-                        VerticalAlignment = VerticalAlignment.Stretch,
-                        Margin = new Thickness(5)
-                    };
-                    // CollectList의 DataContext를 CollectListContentViewModel로 설정
+                    var collectList = CreateView("CollectList");
+                    collectList.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
+                    collectList.VerticalAlignment = VerticalAlignment.Stretch;
+                    collectList.Margin = new Thickness(5);
                     collectList.DataContext = new CollectListContentViewModel();
                     Grid.SetColumn(collectList, 0);
                     grid.Children.Add(collectList);

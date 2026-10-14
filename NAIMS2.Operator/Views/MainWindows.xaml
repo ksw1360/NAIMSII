@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:vm="clr-namespace:NAIMS2.Common.ViewModels"
+        xmlns:vm="clr-namespace:NAIMS2.Common.ViewModels;assembly=NAIMS2.Common"
         xmlns:viewModels="clr-namespace:NAIMS2.Common.ViewModels;assembly=NAIMS2.Common"
         mc:Ignorable="d"
         Title="NAIMS-II 해군음향관리체계" Height="1080" Width="1920"

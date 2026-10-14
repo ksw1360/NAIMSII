@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Controls;
 using System.Windows.Threading;
-using NAIMS2.Operator.ViewModels;
+using NAIMS2.Common.ViewModels;
 using NAIMS2.Common.Utils;
 using System;
 

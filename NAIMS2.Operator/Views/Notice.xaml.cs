@@ -1,6 +1,7 @@
 ﻿using NAIMS2.Common.Models;
-using NAIMS2.Operator.ViewModels;
+using NAIMS2.Common.ViewModels;
 using System.Windows.Controls;
+using System;
 using System.Windows;
 using UserControl = System.Windows.Controls.UserControl;
 

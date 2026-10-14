@@ -17,7 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="devexpress.wpf.grid.core" Version="25.1.7" />
+    <PackageReference Include="devexpress.wpf.grid.core" Version="26.1.5" />
+    <PackageReference Include="log4net" Version="3.5.0" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="10.0.13" />
   </ItemGroup>
 
   <ItemGroup>

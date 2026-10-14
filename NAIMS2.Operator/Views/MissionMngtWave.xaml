@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NAIMS2.Common.Views"
-             xmlns:viewmodels="clr-namespace:NAIMS2.Operator.ViewModels;assembly=NAIMS2.Operator"
+             xmlns:viewmodels="clr-namespace:NAIMS2.Common.ViewModels;assembly=NAIMS2.Common"
              mc:Ignorable="d" 
              d:DesignHeight="450" Background="#FF3C3C3C" Width="1000" Loaded="UserControl_Loaded">
     <Grid Margin="10,10,10,10">

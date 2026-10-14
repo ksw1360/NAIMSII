@@ -1,12 +1,16 @@
 ﻿<Application x:Class="NAIMS2.Operator.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="clr-namespace:NAIMS2.Operator.UI"
              StartupUri="pack://application:,,,/NAIMS2.Operator;component/Views/MainWindows.xaml"> <!-- DLL 참조로 변경 -->
         <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/NAIMS2.Common;component/Themes/Generic.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="{x:Type ui:DockManager}">
+                <Setter Property="AllowCustomization" Value="False" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

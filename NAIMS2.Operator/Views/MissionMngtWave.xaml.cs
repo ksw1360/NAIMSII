@@ -1,4 +1,4 @@
-﻿using NAIMS2.Operator.ViewModels;
+﻿using NAIMS2.Common.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
